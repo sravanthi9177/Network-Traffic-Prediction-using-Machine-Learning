@@ -40,7 +40,7 @@ plt.ylabel("Bytes Received")
 plt.title("Network Traffic Clusters")
 plt.show()
 
-# STAGE 4 — RANDOM FOREST (IMPROVED)
+# STAGE 4 — RANDOM FOREST 
 # Updated features
 X_reg = df[['duration', 'packets', 'bytes_received', 'traffic_rate', 'packets_rate']]
 y_reg = df['bytes_sent']
@@ -62,9 +62,7 @@ y_pred = model.predict(X_test)
 # Evaluation
 r2 = r2_score(y_test, y_pred)
 mse = mean_squared_error(y_test, y_pred)
-print("\n==============================")
 print("MODEL PERFORMANCE")
-print("==============================")
 print("R² Score:", round(r2, 4))
 print("MSE:", round(mse, 2))
 
